@@ -19,4 +19,11 @@ router.get("/users/name/:name", (request, response)=>{
     userSchema.find({name: request.params.name}).then((data) => response.json(data)).catch((error) => response.json({message: error}));
 });
 
+router.put("/users/:id", (request, response)=>{
+    userSchema.findByIdAndUpdate(request.params.id,request.body).then((data) => response.json(data)).catch((error) => response.json({message: error}));
+});
+router.delete("/users/:id", (request, response)=>{
+    userSchema.findByIdAndDelete(request.params.id).then((data) => response.json(data)).catch((error) => response.json({message: error}));
+});
+
 module.exports = router;
