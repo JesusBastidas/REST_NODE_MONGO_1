@@ -4,6 +4,8 @@ Content-Type: application/json
 
 {
     "name": "Jesus Bastidas",
+    "cedula": "10616468564",
     "age": "35",
-    "email": "jesus@correo.com"
+    "email": "jesus@correo.com",
+    "dir": "34asd"
 }
