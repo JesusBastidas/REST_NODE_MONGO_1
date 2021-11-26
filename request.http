@@ -3,9 +3,24 @@ POST http://localhost:9000/api/users HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Jesus Bastidas",
-    "cedula": "10616468564",
-    "age": "35",
-    "email": "jesus@correo.com",
-    "dir": "34asd"
+    "name": "Daniiiiel Bastidas",
+    "cedula": "001",
+    "age": "30",
+    "email": "daniel@correo.com",
+    "dir": "34qbc"
+}
+
+###
+GET http://localhost:9000/api/users HTTP/1.1
+
+###
+PUT http://localhost:9000/api/users/cedula/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Daniel Bastidas",
+    "cedula": "111",
+    "age": "30",
+    "email": "daniel@correo.com",
+    "dir": "34qbc"
 }

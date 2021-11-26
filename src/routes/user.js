@@ -1,4 +1,4 @@
-const { request } = require("express");
+const { request, response } = require("express");
 const express = require("express");
 const userSchema = require("../models/user");
 const router = express.Router();
@@ -37,5 +37,18 @@ router.put("/users/:id", (request, response)=>{
 router.delete("/users/:id", (request, response)=>{
     userSchema.findByIdAndDelete(request.params.id).then((data) => response.json(data)).catch((error) => response.json({message: error}));
 });
+
+// modificar usuario por id
+router.put("/users/:id", (request, response)=>{
+    const {id} = request.params;
+    const {name, age, email, dir, cedula} = request.body;
+    userSchema.updateOne({_id:id},{$set:{name, age, email, dir, cedula}}).then((data)=>response.json(data)).catch((error)=>response.json({message:error}));
+})
+
+//modificar usuario por cedula
+router.put("/users/cedula/:cedula", (request, response)=>{
+    const {name, age, email, dir, cedula} = request.body;
+    userSchema.updateOne({cedula: request.params.cedula},{$set:{name, age, email, dir, cedula}}).then((data)=>response.json(data)).catch((error)=>response.json({message:error}));
+})
 
 module.exports = router;
