@@ -3,7 +3,7 @@ POST http://localhost:9000/api/users HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Daniiiiel Bastidas",
+    "name": "DaniiiielBastidas",
     "cedula": "001",
     "age": "30",
     "email": "daniel@correo.com",
