@@ -4,6 +4,10 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 9000;
 const userRoutes = require("./routes/user");
+const cors = require("cors");
+
+//se inserta la directiva corse
+app.use(cors());
 
 //middleware
 app.use(express.json());
@@ -19,3 +23,4 @@ app.get("/", (require, response)=>{
 mongoose.connect(process.env.mongodb_URI).then(()=> console.log("Conectado a la base de datos"))
 .catch((error)=> console.error(error));
 app.listen(port, () => console.log("server listening on port", port));
+
